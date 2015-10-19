@@ -1,25 +1,23 @@
 /*global
  module
  */
-/**
-  Description
-    Detects '!!!' and returns a random exclamation from google
-
- Dependencies:
-    none
-
- Configuration:
-   none
-
- Commands:
-   <!!!> - <returns a random exclamation from google>
-
- Notes:
-   none
-
- Author:
-   Keith Olenchak
- */
+// Description
+//  Detects '!!!' and returns a random exclamation from google
+//
+// Dependencies:
+//  none
+//
+// Configuration:
+//   none
+//
+// Commands:
+//   <!!!> - <returns a random exclamation from google>
+//
+// Notes:
+//   none
+//
+// Author:
+//   Keith Olenchak
 /**
  *
  * @param robot
