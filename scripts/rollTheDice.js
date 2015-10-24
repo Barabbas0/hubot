@@ -1,4 +1,5 @@
 /*global
+message
  module
  */
 // Description
@@ -24,9 +25,10 @@
  */
 module.exports = function (robot) {
   robot.hear(/rtd/i, function (response) {
+      var sender = message.user.name
       var min = 1;
       var max = 6;
       var rand = Math.floor(Math.random() * (max - min + 1)) + min;
-    response.send('You rolled a ' + rand);
+    response.send(sender + ' rolled a ' + rand);
   });
 };
