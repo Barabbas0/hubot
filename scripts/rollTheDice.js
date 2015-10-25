@@ -29,8 +29,8 @@ function getRand(min, max) {
 module.exports = function (robot) {
   robot.hear(/rtd ?(\d+)* ?(\d+)*/i, function (response) {
       var sender = response.message.user.name
-      var diceCount = escape(response.match[1])
-      var diceSides = escape(response.match[2])
+      var diceSides = escape(response.match[1])
+      var diceCount = escape(response.match[2])
       var min = 1;
       var max = 6;
       if (typeof diceSides == 'number')
