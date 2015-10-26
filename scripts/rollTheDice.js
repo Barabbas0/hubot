@@ -28,24 +28,20 @@ function getRand(min, max) {
 }
 module.exports = function (robot) {
     robot.hear(/rtd ?(\d+)* ?(\d+)*/i, function (response) {
-        var sender = response.message.user.name
-        var diceSides = escape(response.match[1])
-        var diceCount = escape(response.match[2])
+        var sender = response.message.user.name;
+        var resp = sender + ' rolled ';
+        var diceSides = parseInt(response.match[1]);
+        var diceCount = parseInt(response.match[2]);
         var min = 1;
         var max = 6;
-        if (typeof diceSides == 'number')
-            diceSides = Math.floor(diceSides); //Force it into an Integer
-        if (diceSides > 1) //Make sure die has more than one side.
-            max = Math.min(diceSides, 100);
-        var resp = sender + ' rolled '
-        var i = 1;
-        if (typeof diceCount == 'number') {
-            diceCount = Math.floor(diceCount); //Force it into an Integer
-            if (diceCount > 0) //Make sure dice count is legitimate.
-                i = Math.min(diceCount, 8);
-        }
-        for (var j = true;i > 0;i--) {
-            if (i > 1) {
+        if (typeof diceSides == 'number' && diceSides > 1)
+            max = Math.min(diceSides, 30);
+        if (typeof diceCount == 'number' && diceCount > 0)
+            diceCount = Math.min(diceCount, 8);
+        else
+            diceCount = 1;
+        for (var j = true;diceCount > 0;diceCount--) {
+            if (diceCount > 1) {
                 resp += getRand(min, max) + ', ';
                 j = false;
             }
