@@ -1,8 +1,5 @@
-/*global
- module
- */
 // Description
-//  Detects '!!!' and returns a random exclamation from google
+//  Detects '!!!' and excites the robot
 //
 // Dependencies:
 //  none
@@ -11,13 +8,16 @@
 //   none
 //
 // Commands:
-//   <!!!> - <returns a random exclamation from google>
+//   !!! - You excite the robot.
 //
 // Notes:
 //   none
 //
 // Author:
 //   Keith Olenchak
+/*global
+ module
+ */
 /**
  *
  * @param robot
